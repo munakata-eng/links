@@ -83,6 +83,19 @@
                         <span class="link-username">日々の気づきを音声発信</span>
                     </a>
 
+                    <a href="https://voicy.jp/channel/899814" target="_blank" class="link-card voicy">
+                        <div class="icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                                <line x1="12" y1="19" x2="12" y2="23"></line>
+                                <line x1="8" y1="23" x2="16" y2="23"></line>
+                            </svg>
+                        </div>
+                        <span class="link-text">Voicy</span>
+                        <span class="link-username">音声プラットフォーム</span>
+                    </a>
+
                     <a href="https://mel-tech.jp/" target="_blank" class="link-card company">
                         <div class="icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -168,5 +181,31 @@
     </div>
 
     <div class="background-animation"></div>
+    <div class="background-particles" id="particles"></div>
+    
+    <script>
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 15;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (8 + Math.random() * 4) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', createParticles);
+        
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = (e.clientX / window.innerWidth) * 100;
+            const mouseY = (e.clientY / window.innerHeight) * 100;
+            document.documentElement.style.setProperty('--mouse-x', mouseX + '%');
+            document.documentElement.style.setProperty('--mouse-y', mouseY + '%');
+        });
+    </script>
 </body>
 </html>
