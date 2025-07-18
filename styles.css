@@ -164,23 +164,51 @@ body {
 }
 
 .link-category {
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
+    padding: 0;
+    position: relative;
+    border-left: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.general-activity {
+    border-left-color: rgba(102, 126, 234, 0.6);
+}
+
+.ai-community {
+    border-left-color: rgba(67, 233, 123, 0.6);
+}
+
+.nft-project {
+    border-left-color: rgba(240, 147, 251, 0.6);
 }
 
 .category-title {
-    font-size: 1.25rem;
-    font-weight: 500;
+    font-size: 1.1rem;
+    font-weight: 600;
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--border-color);
-    font-family: 'Noto Sans JP', sans-serif;
+    padding-left: 1rem;
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
     letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: none;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.category-icon {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    transition: all 0.2s ease;
 }
 
 .links-grid {
     display: grid;
     gap: 1rem;
+    padding-left: 1rem;
 }
 
 .link-card {
