@@ -205,6 +205,16 @@ body {
     transition: all 0.2s ease;
 }
 
+.category-description {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    opacity: 0.9;
+}
+
 .links-grid {
     display: grid;
     gap: 1rem;
