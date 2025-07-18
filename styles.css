@@ -23,7 +23,7 @@
 body {
     font-family: 'Inter', 'Noto Sans JP', sans-serif;
     background: var(--bg-primary);
-    background-image: 
+    background-image:
         radial-gradient(circle at 25% 25%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 75% 75%, rgba(118, 75, 162, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 50% 50%, rgba(67, 233, 123, 0.05) 0%, transparent 70%);
@@ -41,10 +41,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
-        radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
-            rgba(102, 126, 234, 0.15), 
-            rgba(118, 75, 162, 0.1) 40%, 
+    background:
+        radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+            rgba(102, 126, 234, 0.15),
+            rgba(118, 75, 162, 0.1) 40%,
             transparent 80%
         );
     pointer-events: none;
@@ -232,11 +232,19 @@ body {
     flex-shrink: 0;
     transition: all 0.3s ease;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
 }
 
 .icon svg {
     width: 24px;
     height: 24px;
+    transition: all 0.3s ease;
+}
+
+.icon img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
     transition: all 0.3s ease;
 }
 
@@ -246,6 +254,10 @@ body {
 }
 
 .link-card:hover .icon svg {
+    transform: scale(1.1);
+}
+
+.link-card:hover .icon img {
     transform: scale(1.1);
 }
 
@@ -262,92 +274,99 @@ body {
     color: var(--text-secondary);
 }
 
-.twitter .icon { 
-    background: linear-gradient(135deg, #1a1d1f, #2a2d3f); 
+.twitter .icon {
+    background: linear-gradient(135deg, #1a1d1f, #2a2d3f);
     box-shadow: 0 4px 16px rgba(26, 29, 31, 0.5);
 }
-.twitter:hover .icon { 
-    background: linear-gradient(135deg, #000000, #1a1a1a); 
+.twitter:hover .icon {
+    background: linear-gradient(135deg, #000000, #1a1a1a);
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.7);
 }
 
-.portfolio .icon { 
+.portfolio .icon {
     background: var(--gradient-primary);
     box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
 }
-.portfolio:hover .icon { 
+.portfolio:hover .icon {
     background: var(--gradient-primary);
     box-shadow: 0 6px 24px rgba(102, 126, 234, 0.5);
 }
 
-.note .icon { 
+.note .icon {
     background: var(--gradient-quaternary);
     box-shadow: 0 4px 16px rgba(67, 233, 123, 0.3);
 }
-.note:hover .icon { 
+.note:hover .icon {
     background: var(--gradient-quaternary);
     box-shadow: 0 6px 24px rgba(67, 233, 123, 0.5);
 }
 
-.standfm .icon { 
+.standfm .icon {
     background: var(--gradient-secondary);
     box-shadow: 0 4px 16px rgba(240, 147, 251, 0.3);
 }
-.standfm:hover .icon { 
+.standfm:hover .icon {
     background: var(--gradient-secondary);
     box-shadow: 0 6px 24px rgba(240, 147, 251, 0.5);
 }
 
-.company .icon { 
-    background: var(--gradient-tertiary);
-    box-shadow: 0 4px 16px rgba(79, 172, 254, 0.3);
+.company .icon {
+    background: #ffffff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
-.company:hover .icon { 
-    background: var(--gradient-tertiary);
-    box-shadow: 0 6px 24px rgba(79, 172, 254, 0.5);
+.company:hover .icon {
+    background: #ffffff;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
 }
 
-.discord .icon { 
-    background: linear-gradient(135deg, #2c2f33, #5865f2); 
+.company .icon img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    padding: 4px;
+}
+
+.discord .icon {
+    background: linear-gradient(135deg, #2c2f33, #5865f2);
     box-shadow: 0 4px 16px rgba(88, 101, 242, 0.3);
 }
-.discord:hover .icon { 
-    background: linear-gradient(135deg, #5865f2, #7289da); 
+.discord:hover .icon {
+    background: linear-gradient(135deg, #5865f2, #7289da);
     box-shadow: 0 6px 24px rgba(88, 101, 242, 0.6);
 }
 
-.learning .icon { 
+.learning .icon {
     background: var(--gradient-quaternary);
     box-shadow: 0 4px 16px rgba(67, 233, 123, 0.3);
 }
-.learning:hover .icon { 
+.learning:hover .icon {
     background: var(--gradient-quaternary);
     box-shadow: 0 6px 24px rgba(67, 233, 123, 0.5);
 }
 
-.nft .icon { 
+.nft .icon {
     background: var(--gradient-primary);
     box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
 }
-.nft:hover .icon { 
+.nft:hover .icon {
     background: var(--gradient-primary);
     box-shadow: 0 6px 24px rgba(102, 126, 234, 0.5);
 }
 
-.sale .icon { 
+.sale .icon {
     background: var(--gradient-secondary);
     box-shadow: 0 4px 16px rgba(240, 147, 251, 0.3);
 }
-.sale:hover .icon { 
+.sale:hover .icon {
     background: var(--gradient-secondary);
     box-shadow: 0 6px 24px rgba(240, 147, 251, 0.5);
 }
 
-.voicy .icon { 
+.voicy .icon {
     background: linear-gradient(135deg, #ff6b35, #f7931e);
     box-shadow: 0 4px 16px rgba(255, 107, 53, 0.3);
 }
-.voicy:hover .icon { 
+.voicy:hover .icon {
     background: linear-gradient(135deg, #ff6b35, #f7931e);
     box-shadow: 0 6px 24px rgba(255, 107, 53, 0.5);
 }
@@ -367,49 +386,49 @@ body {
     .container {
         padding: 1.5rem 1rem;
     }
-    
+
     .name {
         font-size: 1.75rem;
     }
-    
+
     .avatar {
         width: 100px;
         height: 100px;
     }
-    
+
     .bio-container {
         padding: 1rem;
         gap: 0.5rem;
     }
-    
+
     .bio-item {
         font-size: 0.875rem;
     }
-    
+
     .bio-icon {
         width: 28px;
         height: 28px;
         font-size: 1rem;
     }
-    
+
     .link-card {
         padding: 1rem;
     }
-    
+
     .icon {
         width: 40px;
         height: 40px;
     }
-    
+
     .icon svg {
         width: 20px;
         height: 20px;
     }
-    
+
     .link-text {
         font-size: 1rem;
     }
-    
+
     .link-username {
         font-size: 0.75rem;
     }
@@ -469,7 +488,7 @@ body {
         animation: none !important;
         transition: none !important;
     }
-    
+
     .background-particles {
         display: none;
     }
