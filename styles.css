@@ -449,13 +449,23 @@ body {
     }
 
     .icon {
-        width: 40px;
-        height: 40px;
+        width: 48px;
+        height: 48px;
     }
 
     .icon svg {
-        width: 20px;
-        height: 20px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .icon img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .company .icon img {
+        width: 48px;
+        height: 48px;
     }
 
     .link-text {
