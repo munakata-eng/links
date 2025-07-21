@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(open index.html)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(mv:*)"
     ],
     "deny": []
   }
