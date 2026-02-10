@@ -132,19 +132,14 @@ body::before {
     color: #fff;
 }
 
-.profile-discord-link img {
-    width: 36px;
-    height: 36px;
-}
-
 .profile-discord-link {
     background: #5865f2;
     border: 1px solid #5865f2;
 }
 
 .profile-youtube-link img {
-    width: 36px;
-    height: 36px;
+    width: 50px;
+    height: 50px;
 }
 
 .profile-youtube-link {
