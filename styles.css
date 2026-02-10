@@ -86,9 +86,70 @@ body::before {
 .name {
     font-size: 1.75rem;
     font-weight: 700;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
     color: var(--text-primary);
     letter-spacing: 0.04em;
+}
+
+.profile-social-links {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.profile-social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.profile-social-link svg,
+.profile-social-link img {
+    width: 28px;
+    height: 28px;
+}
+
+.profile-social-link:hover {
+    opacity: 0.85;
+    transform: scale(1.05);
+}
+
+.profile-social-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.profile-x-link {
+    background: #000;
+    border: 1px solid #000;
+    color: #fff;
+}
+
+.profile-discord-link img {
+    width: 36px;
+    height: 36px;
+}
+
+.profile-discord-link {
+    background: #5865f2;
+    border: 1px solid #5865f2;
+}
+
+.profile-youtube-link img {
+    width: 36px;
+    height: 36px;
+}
+
+.profile-youtube-link {
+    background: #ff0000;
+    border: 1px solid #ff0000;
 }
 
 .title {
