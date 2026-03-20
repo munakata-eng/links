@@ -107,44 +107,18 @@
                 </div>
             </section>
 
-            <section class="link-category udemy-courses">
+            <section class="link-category udemy-courses" id="udemy-section">
                 <h2 class="category-title">
                     Udemy講座
                 </h2>
                 <p class="category-description">
                     AI・ノーコードで「作る」力を身につける講座です。<br>
-                    完全初心者・開発未経験者向けに、すぐ試せる内容でお届けしています。<span class="udemy-deadline">割引は4/19まで</span>
+                    完全初心者・開発未経験者向けに、すぐ試せる内容でお届けしています。<span class="udemy-deadline" id="udemy-deadline"></span>
                 </p>
-                <div class="links-grid udemy-grid">
-                    <a href="https://www.udemy.com/course/gemini-cli-tutorial/?couponCode=320A8F9A16753ACC4EC0" target="_blank" rel="noopener noreferrer" class="link-card udemy-card">
-                        <div class="icon udemy-icon">
-                            <img src="assets/geminicli.png" alt="Gemini CLI" />
-                        </div>
-                        <span class="link-text">Gemini CLIで始めるAIプログラミング入門</span>
-                        <span class="link-username udemy-price"><span class="price-original">4,800円</span> → <span class="price-sale">1,500円</span></span>
-                    </a>
-                    <a href="https://www.udemy.com/course/chatgpt-gas-automation/?couponCode=E8EF8F17A999A1A65E7F" target="_blank" rel="noopener noreferrer" class="link-card udemy-card">
-                        <div class="icon udemy-icon">
-                            <img src="assets/gas.png" alt="ChatGPT GAS" />
-                        </div>
-                        <span class="link-text">ChatGPTでつくる！仕事を自動化するノーコード実践講座</span>
-                        <span class="link-username udemy-price"><span class="price-original">9,800円</span> → <span class="price-sale">1,500円</span></span>
-                    </a>
-                    <a href="https://www.udemy.com/course/antigravity/?couponCode=A1DCF4A0599E66035B6D" target="_blank" rel="noopener noreferrer" class="link-card udemy-card">
-                        <div class="icon udemy-icon">
-                            <img src="assets/antigravity.png" alt="Antigravity" />
-                        </div>
-                        <span class="link-text">Antigravityで始めるAIプログラミング入門</span>
-                        <span class="link-username udemy-price"><span class="price-original">9,800円</span> → <span class="price-sale">1,500円</span></span>
-                    </a>
-                    <a href="https://www.udemy.com/course/claudecode-cowork/?couponCode=370DEC3E50284BA7A228" target="_blank" rel="noopener noreferrer" class="link-card udemy-card">
-                        <div class="icon udemy-icon">
-                            <img src="assets/claude.png" alt="ClaudeCode" />
-                        </div>
-                        <span class="link-text">ClaudeCode × Cowork 完全入門</span>
-                        <span class="link-username udemy-price"><span class="price-original">9,800円</span> → <span class="price-sale">1,500円</span></span>
-                    </a>
-                </div>
+                <p class="udemy-coupon-note">
+                    ⚠️ リンクからクーポンが反映されない場合は、右の「クーポン」ボタンでコードをコピーし、Udemyのクーポン入力欄に直接貼り付けてください。
+                </p>
+                <div class="links-grid udemy-grid" id="udemy-grid"></div>
             </section>
 
             <section class="link-category audio-distribution">
@@ -273,6 +247,72 @@
     <div class="background-particles" id="particles"></div>
 
     <script>
+        const UDEMY_DEADLINE = '有効期限: 2026/4/19まで';
+
+        const UDEMY_COURSES = [
+            {
+                title: 'Gemini CLIで始めるAIプログラミング入門',
+                courseId: 'gemini-cli-tutorial',
+                coupon: '320A8F9A16753ACC4EC0',
+                image: 'assets/geminicli.png',
+                priceOriginal: '4,800円',
+                priceSale: '1,500円',
+            },
+            {
+                title: 'ChatGPTでつくる！仕事を自動化するノーコード実践講座',
+                courseId: 'chatgpt-gas-automation',
+                coupon: 'E8EF8F17A999A1A65E7F',
+                image: 'assets/gas.png',
+                priceOriginal: '9,800円',
+                priceSale: '1,500円',
+            },
+            {
+                title: 'Antigravityで始めるAIプログラミング入門',
+                courseId: 'antigravity',
+                coupon: 'A1DCF4A0599E66035B6D',
+                image: 'assets/antigravity.png',
+                priceOriginal: '9,800円',
+                priceSale: '1,500円',
+            },
+            {
+                title: 'ClaudeCode × Cowork 完全入門',
+                courseId: 'claudecode-cowork',
+                coupon: '370DEC3E50284BA7A228',
+                image: 'assets/claude.png',
+                priceOriginal: '9,800円',
+                priceSale: '1,500円',
+            },
+        ];
+        // ===================================================
+
+        function renderUdemyCourses() {
+            const grid = document.getElementById('udemy-grid');
+            const deadline = document.getElementById('udemy-deadline');
+
+            if (UDEMY_DEADLINE) deadline.textContent = UDEMY_DEADLINE;
+
+            grid.innerHTML = UDEMY_COURSES.map(course => {
+                const url = `https://www.udemy.com/course/${course.courseId}/?couponCode=${course.coupon}`;
+                return `
+                <div class="udemy-card-wrapper">
+                    <a href="${url}" target="_blank" rel="noopener noreferrer" class="link-card udemy-card">
+                        <div class="icon udemy-icon">
+                            <img src="${course.image}" alt="${course.title}" />
+                        </div>
+                        <span class="link-text">${course.title}</span>
+                        <span class="link-username udemy-price">
+                            <span class="price-original">${course.priceOriginal}</span> → <span class="price-sale">${course.priceSale}</span>
+                        </span>
+                    </a>
+                    <button class="coupon-btn" data-coupon="${course.coupon}" onclick="copyCoupon(event, this)" aria-label="クーポンコードをコピー">
+                        <svg class="coupon-icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                        <svg class="coupon-icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span class="coupon-btn-label">クーポン</span>
+                    </button>
+                </div>`;
+            }).join('');
+        }
+
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
             const particleCount = 15;
@@ -287,7 +327,20 @@
             }
         }
 
-        document.addEventListener('DOMContentLoaded', createParticles);
+        document.addEventListener('DOMContentLoaded', () => {
+            renderUdemyCourses();
+            createParticles();
+        });
+
+        function copyCoupon(event, btn) {
+            event.preventDefault();
+            event.stopPropagation();
+            const code = btn.dataset.coupon;
+            navigator.clipboard.writeText(code).then(() => {
+                btn.classList.add('copied');
+                setTimeout(() => btn.classList.remove('copied'), 2000);
+            });
+        }
 
         document.addEventListener('mousemove', (e) => {
             const mouseX = (e.clientX / window.innerWidth) * 100;
