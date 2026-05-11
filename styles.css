@@ -137,6 +137,11 @@ body::before {
     border: 1px solid #5865f2;
 }
 
+.profile-substack-link {
+    background: #ff6719;
+    border: 1px solid #ff6719;
+}
+
 .profile-youtube-link img {
     width: 50px;
     height: 50px;
@@ -451,6 +456,24 @@ body::before {
 }
 
 /* Udemy courses section */
+.brain-articles .category-title::before {
+    background: #111827;
+}
+
+.brain-card {
+    border-left: 3px solid rgba(17, 24, 39, 0.28);
+}
+
+.brain-card:hover {
+    border-left-color: #111827;
+    box-shadow: 0 4px 12px rgba(17, 24, 39, 0.08);
+}
+
+.brain-icon {
+    background: linear-gradient(135deg, rgba(17, 24, 39, 0.08) 0%, rgba(17, 24, 39, 0.03) 100%) !important;
+    border-color: rgba(17, 24, 39, 0.16) !important;
+}
+
 .udemy-courses .category-title::before {
     background: #a435f0;
 }
@@ -521,6 +544,7 @@ body::before {
 /* Remove old category border-left and per-card gradient overrides */
 .general-activity,
 .ai-community,
+.brain-articles,
 .audio-distribution,
 .nft-project,
 .udemy-courses {
