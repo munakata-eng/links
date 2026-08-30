@@ -752,6 +752,137 @@ body::before {
     outline-offset: 2px;
 }
 
+/* Free note articles banner (TOP page link) */
+.free-notes {
+    padding-top: 0;
+}
+
+.free-notes-banner {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 1.125rem 1.25rem;
+    background:
+        radial-gradient(ellipse 60% 80% at 100% 0%, rgba(255, 255, 255, 0.18) 0%, transparent 60%),
+        linear-gradient(135deg, #2aa894 0%, #41c9b4 100%);
+    border-radius: var(--radius-lg);
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(42, 168, 148, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+}
+
+.free-notes-banner::before {
+    content: 'note';
+    position: absolute;
+    right: -0.25rem;
+    bottom: -1.1rem;
+    font-family: var(--font-mono);
+    font-size: 4.5rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+    line-height: 1;
+}
+
+.free-notes-banner:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(42, 168, 148, 0.32);
+}
+
+.free-notes-banner:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.free-notes-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #fff;
+    color: #2aa894;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    flex-shrink: 0;
+}
+
+.free-notes-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    min-width: 0;
+    position: relative;
+}
+
+.free-notes-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    opacity: 0.9;
+}
+
+.free-notes-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+.free-notes-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-top: 0.25rem;
+}
+
+.free-notes-step {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 0.7rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.free-notes-step b {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    opacity: 0.85;
+}
+
+.free-notes-cta {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.6rem 0.9rem;
+    background: #fff;
+    color: #2aa894;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease;
+}
+
+.free-notes-banner:hover .free-notes-cta {
+    transform: translateX(2px);
+}
+
 /* Responsive */
 @media (max-width: 640px) {
     .container {
@@ -798,6 +929,32 @@ body::before {
 
     .brain-products-grid {
         grid-template-columns: 1fr;
+    }
+
+    .free-notes-banner {
+        grid-template-columns: auto 1fr;
+        gap: 0.75rem 0.875rem;
+        padding: 1rem 1rem 1rem;
+    }
+
+    .free-notes-badge {
+        width: 44px;
+        height: 44px;
+        font-size: 0.62rem;
+        align-self: start;
+    }
+
+    .free-notes-br {
+        display: none;
+    }
+
+    .free-notes-title {
+        font-size: 0.875rem;
+    }
+
+    .free-notes-cta {
+        grid-column: 2;
+        justify-self: start;
     }
 
     .link-card .icon {

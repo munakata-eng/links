@@ -1,0 +1,550 @@
+/* ==========================================================
+   note.html 専用スタイル
+   ========================================================== */
+.note-container {
+    max-width: 680px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.back-link svg {
+    width: 16px;
+    height: 16px;
+}
+
+.back-link:hover {
+    color: var(--accent);
+}
+
+.back-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* ---------- Hero ---------- */
+.note-hero {
+    margin: 1.75rem 0 3rem;
+}
+
+.note-hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    color: #2aa894;
+    margin-bottom: 0.875rem;
+}
+
+.note-hero-title {
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1.35;
+    letter-spacing: 0.02em;
+    margin-bottom: 1.25rem;
+}
+
+.note-hero-em {
+    background: linear-gradient(transparent 62%, rgba(65, 201, 180, 0.45) 62%);
+    padding: 0 0.1em;
+}
+
+.note-hero-lead {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.note-hero-lead strong {
+    color: var(--text-primary);
+}
+
+.note-path {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.625rem;
+    counter-reset: step;
+}
+
+.note-path-step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.875rem 1rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.note-path-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -0.625rem;
+    top: 50%;
+    width: 0.625rem;
+    height: 1px;
+    background: var(--border-hover);
+}
+
+.note-path-num {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: #2aa894;
+    font-weight: 700;
+}
+
+.note-path-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.note-path-desc {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* ---------- Section ---------- */
+.note-section {
+    margin-bottom: 3.5rem;
+}
+
+.note-section-head {
+    margin-bottom: 1.25rem;
+}
+
+.note-section-num {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #fff;
+    background: #1a1a1a;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    margin-bottom: 0.625rem;
+}
+
+.note-section-title {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.5rem;
+}
+
+.note-section-lead {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+}
+
+.note-section-lead strong {
+    color: var(--text-primary);
+}
+
+/* ---------- Article card ---------- */
+.article-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.article-card {
+    --theme: #1a1a1a;
+    --theme-soft: rgba(26, 26, 26, 0.08);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.375rem 1.5rem 1.25rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--theme);
+    border-radius: var(--radius-lg);
+    color: var(--text-primary);
+    text-decoration: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    overflow: hidden;
+}
+
+.article-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
+    border-color: var(--border-hover);
+    border-top-color: var(--theme);
+}
+
+.article-card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.article-card.is-featured {
+    border-top-width: 4px;
+    background:
+        radial-gradient(ellipse 70% 60% at 100% 0%, var(--theme-soft) 0%, transparent 60%),
+        var(--bg-surface);
+}
+
+.article-ribbon {
+    position: absolute;
+    top: 0.875rem;
+    right: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: var(--theme);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    pointer-events: none;
+}
+
+.article-ribbon::before {
+    content: '★';
+    font-size: 0.7rem;
+}
+
+.article-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+}
+
+.article-logo {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: var(--theme-soft);
+    color: var(--theme);
+}
+
+.article-logo img,
+.article-logo svg {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    padding-top: 0.25rem;
+}
+
+.article-card.is-featured .article-tags {
+    padding-right: 9rem;
+}
+
+.tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    line-height: 1;
+    padding: 0.4rem 0.55rem;
+    border-radius: 999px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.tag-free {
+    background: rgba(22, 163, 74, 0.1);
+    border-color: rgba(22, 163, 74, 0.3);
+    color: #15803d;
+    font-weight: 700;
+}
+
+.tag-paid {
+    background: rgba(180, 83, 9, 0.08);
+    border-color: rgba(180, 83, 9, 0.25);
+    color: var(--accent);
+}
+
+.article-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    line-height: 1.45;
+    letter-spacing: 0.01em;
+}
+
+.article-summary {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.article-outcomes {
+    padding: 0.875rem 1rem;
+    background: var(--bg-elevated);
+    border-radius: var(--radius);
+}
+
+.article-outcomes-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--theme);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+
+.article-outcomes-label::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--theme);
+}
+
+.article-outcomes ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.article-outcomes li {
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+}
+
+.article-outcomes li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.3em;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: var(--theme);
+}
+
+.article-outcomes li::after {
+    content: '';
+    position: absolute;
+    left: 0.34rem;
+    top: calc(0.3em + 0.2rem);
+    width: 0.25rem;
+    height: 0.5rem;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(45deg);
+}
+
+.article-outcomes li b {
+    font-weight: 700;
+    background: linear-gradient(transparent 65%, var(--theme-soft) 65%);
+}
+
+.article-cta {
+    align-self: flex-end;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 0.25rem;
+    padding: 0.6rem 1rem;
+    background: var(--theme);
+    color: #fff;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    border-radius: 999px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.article-card:hover .article-cta {
+    transform: translateX(2px);
+}
+
+/* ---------- Per-tool themes ---------- */
+.theme-antigravity {
+    --theme: #2563eb;
+    --theme-soft: rgba(37, 99, 235, 0.1);
+}
+
+.theme-claude {
+    --theme: #d97757;
+    --theme-soft: rgba(217, 119, 87, 0.12);
+}
+
+.theme-codex {
+    --theme: #111111;
+    --theme-soft: rgba(17, 17, 17, 0.07);
+}
+
+.theme-chrome {
+    --theme: #1a73e8;
+    --theme-soft: rgba(26, 115, 232, 0.1);
+}
+
+.theme-chrome .article-logo {
+    background: #fff;
+    border: 1px solid var(--border);
+}
+
+.theme-expo {
+    --theme: #0ea5e9;
+    --theme-soft: rgba(14, 165, 233, 0.12);
+}
+
+.theme-github {
+    --theme: #24292f;
+    --theme-soft: rgba(36, 41, 47, 0.08);
+}
+
+/* ---------- Next step ---------- */
+.note-next {
+    padding: 1.5rem 1.5rem 1.625rem;
+    background: #1a1a1a;
+    color: #fff;
+    border-radius: var(--radius-lg);
+    margin-bottom: 2.5rem;
+}
+
+.note-next-title {
+    font-size: 1.125rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.note-next-lead {
+    font-size: 0.875rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 1.125rem;
+}
+
+.note-next-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+}
+
+.note-next-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1rem;
+    border-radius: 999px;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.note-next-btn:hover {
+    transform: translateY(-1px);
+}
+
+.note-next-btn img {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+}
+
+.note-next-btn.is-note {
+    background: #41c9b4;
+    color: #fff;
+}
+
+.note-next-btn.is-note:hover {
+    background: #2aa894;
+}
+
+.note-next-btn.is-ghost {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.note-next-btn.is-ghost:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.note-footer {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+    .note-hero {
+        margin: 1.25rem 0 2.25rem;
+    }
+
+    .note-hero-title {
+        font-size: 1.5rem;
+    }
+
+    .note-path {
+        grid-template-columns: 1fr;
+    }
+
+    .note-path-step:not(:last-child)::after {
+        display: none;
+    }
+
+    .note-section-title {
+        font-size: 1.25rem;
+    }
+
+    .article-card {
+        padding: 1.125rem 1.125rem 1rem;
+    }
+
+    .article-title {
+        font-size: 1.05rem;
+    }
+
+    .article-title br {
+        display: none;
+    }
+
+    .article-logo {
+        width: 48px;
+        height: 48px;
+    }
+
+    .article-logo img,
+    .article-logo svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .article-card.is-featured .article-tags {
+        padding-right: 0;
+        padding-top: 2rem;
+    }
+
+    .article-cta {
+        align-self: stretch;
+        justify-content: center;
+    }
+}
