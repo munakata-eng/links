@@ -419,6 +419,11 @@
     --theme-soft: rgba(36, 41, 47, 0.08);
 }
 
+.theme-cloudflare {
+    --theme: #f38020;
+    --theme-soft: rgba(243, 128, 32, 0.12);
+}
+
 /* ---------- Next step ---------- */
 .note-next {
     padding: 1.5rem 1.5rem 1.625rem;
